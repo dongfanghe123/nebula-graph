@@ -1,0 +1,20 @@
+nebula:
+  # Graph 服务地址列表，支持多个节点实现高可用
+  addresses:
+    - 192.168.101.129:9669
+    # - 192.168.1.100:9669  # 可以配置多个
+  # 默认操作的图空间
+  space: test_space
+  # 认证信息
+  username: root
+  password: nebula
+  # 连接池高级配置（可选，建议配置）
+  pool:
+    # 最大连接数（Session 数量），默认 10
+    max-conn-size: 10
+    # 空闲 Session 超时时间（毫秒），默认 0 表示永不超时
+    cleanTime: 1000
+    # 健康检查间隔（毫秒），默认 1000
+    interval-time: 300
+    # 失败重试次数，默认 3
+    retry-times: 3
