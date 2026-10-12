@@ -100,28 +100,9 @@ public class ConvertUtils {
                 details.put(entry.getKey(),var.getLocalTime());
             }
 
-            if(v.isVertex()){
-
-            }
-
-            if(v.isEdge()){
-
-            }
-
-            if(v.isPath()){
-
-            }
-
-            if(v.isNull()){
-
-            }
-
-            if(v.isEmpty()){
-
-            }
 
             if(v.isGeography()){
-
+                //TODO
             }
         }
 

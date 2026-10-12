@@ -15,7 +15,7 @@ public interface NebulaClient {
 
     Result saveNode(Entity entity);
 
-    List<NebulaTagFieldMeta> showTag(String tag);
+    List<NebulaTagFieldMeta> getTagInfo(String tag);
 
     Boolean createTag(Tag tag);
 

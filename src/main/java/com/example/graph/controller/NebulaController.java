@@ -45,7 +45,7 @@ public class NebulaController {
 
     @RequestMapping("/showTag")
     public Result showTag(@RequestParam("tag") String tag) {
-        List<NebulaTagFieldMeta> nebulaTagFieldMetas = nebulaClient.showTag(tag);
+        List<NebulaTagFieldMeta> nebulaTagFieldMetas = nebulaClient.getTagInfo(tag);
         return Result.success(nebulaTagFieldMetas);
     }
 
@@ -225,6 +225,16 @@ public class NebulaController {
         }
 
         return Result.success(result);
+    }
+
+
+
+    @RequestMapping("/execute")
+    public Result execute(@RequestBody String string){
+        JSONObject jsonObject = JSONObject.parseObject(string);
+        String ngql = jsonObject.getString("ngql");
+        ResultSet resultSet = nebulaClient.execute(ngql);
+        return Result.success(resultSet);
     }
 
 }

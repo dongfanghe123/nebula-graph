@@ -156,7 +156,7 @@ public class NebulaClientImpl implements NebulaClient{
     }
 
     @Override
-    public List<NebulaTagFieldMeta> showTag(String tag)  {
+    public List<NebulaTagFieldMeta> getTagInfo(String tag)  {
 
         String nGql = String.format("desc tag %s",tag);
         ResultSet resultSet = this.execute(nGql);
